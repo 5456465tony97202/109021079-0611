@@ -1,7 +1,10 @@
 from tkinter import*
 
+op=0
+a=0
+opflag=False
 def Text(n):
-    if int(lab["text"]) !=0:
+    if int(lab["text"]) !=0 and opFlag==False:
        lab["text"]=lab["text"]+n
     else:
         lab["text"]=n
@@ -9,6 +12,8 @@ def Text(n):
 def set(Value):
     global op
     global a
+    global opflag
+    opflag=True
     a=int(lab["text"])
     op=Value
 def computer():
@@ -63,13 +68,13 @@ btn10=Button(window,text=".",font=("Monaco",30,"bold"),relief="raised",command=l
 btn10.grid(row=4,column=1,sticky=NSEW)
 btn11=Button(window,text="=",font=("Monaco",30,"bold"),relief="raised",command=lambda:Text(""))
 btn11.grid(row=4,column=2,sticky=NSEW)
-btn12=Button(window,text="+",font=("Monaco",30,"bold"),relief="raised",command=lambda:Text(""))
+btn12=Button(window,text="+",font=("Monaco",30,"bold"),relief="raised",command=lambda:computer("1"))
 btn12.grid(row=1,column=3,sticky=NSEW)
-btn13=Button(window,text="-",font=("Monaco",30,"bold"),relief="raised",command=lambda:Text(""))
+btn13=Button(window,text="-",font=("Monaco",30,"bold"),relief="raised",command=lambda:computer("2"))
 btn13.grid(row=2,column=3,sticky=NSEW)
-btn14=Button(window,text="*",font=("Monaco",30,"bold"),relief="raised",command=lambda:Text(""))
+btn14=Button(window,text="*",font=("Monaco",30,"bold"),relief="raised",command=lambda:computer("3"))
 btn14.grid(row=3,column=3,sticky=NSEW)
-btn15=Button(window,text="/",font=("Monaco",30,"bold"),relief="raised",command=lambda:Text(""))
+btn15=Button(window,text="/",font=("Monaco",30,"bold"),relief="raised",command=lambda:computer("4"))
 btn15.grid(row=4,column=3,sticky=NSEW)
 
 window.mainloop()
